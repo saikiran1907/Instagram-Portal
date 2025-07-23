@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instagram Login/Register</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <h1 class="logo">Instagram</h1>
+
+      <form class="form" id="loginForm">
+        <input type="text" placeholder="Phone number, username or email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Log In</button>
+        <div class="divider">OR</div>
+        <a href="#" class="forgot">Forgot password?</a>
+      </form>
+
+      <div class="switch-form">
+        Don't have an account? <a href="#" onclick="toggleForm('register')">Sign up</a>
+      </div>
+    </div>
+
+    <div class="form-box" id="registerBox" style="display: none;">
+      <h1 class="logo">Instagram</h1>
+
+      <form class="form" id="registerForm">
+        <input type="text" placeholder="Mobile Number or Email" required>
+        <input type="text" placeholder="Full Name" required>
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+        <a href="Upload_Details.html" class="btn-link">sign up</a>
+      </form>
+
+      <div class="switch-form">
+        Have an account? <a href="#" onclick="toggleForm('login')">Log in</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleForm(type) {
+      const loginBox = document.getElementById("loginForm").parentElement;
+      const registerBox = document.getElementById("registerBox");
+
+      if (type === "register") {
+        loginBox.style.display = "none";
+        registerBox.style.display = "block";
+      } else {
+        loginBox.style.display = "block";
+        registerBox.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
